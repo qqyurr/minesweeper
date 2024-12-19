@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Board from "./components/Board";
+import Controls from "./components/Controls";
+import Timer from "./components/Timer";
+import FaceDisplay from "./components/FaceDisplay";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="container">
+        <div className="menu">
+          <Controls />
+        </div>
+        <div className="top-line">
+          <Timer direction="left" />
+          <FaceDisplay />
+          <Timer direction="right" />
+        </div>
+        <Board />
+      </div>
     </div>
   );
 }
